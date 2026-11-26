@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisata Kuliner Lombok - Daftar Kuliner</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles-list.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1><img class="logo" src="logo.png" alt="Logo Kulineria">Kulineria</h1>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Daftar.html" class="active" aria-current="page">Daftar</a></li>
+                    <li class="dropdown">
+                        <button type="button" class="dropdown-btn" aria-haspopup="true">Form &#9662;</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+                            <li><a href="Pemesanan.html">Pemesanan</a></li>
+                            <li><a href="Ulasan.html">Ulasan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="judul-halaman">
+                <h2>Daftar Kuliner Lombok</h2>
+                <p>Pilih kategori untuk menyaring daftar, lalu klik salah satu kuliner untuk mengenalnya lebih dekat.</p>
+            </section>
+
+            <div class="filter" role="group" aria-label="Kategori kuliner">
+                <button type="button" class="filter-btn active" data-kategori="semua" aria-pressed="true">Semua Kuliner</button>
+                <button type="button" class="filter-btn" data-kategori="makanan" aria-pressed="false">Makanan</button>
+                <button type="button" class="filter-btn" data-kategori="minuman" aria-pressed="false">Minuman</button>
+                <button type="button" class="filter-btn" data-kategori="camilan" aria-pressed="false">Camilan &amp; Jajanan</button>
+            </div>
+
+            <div class="grid-kuliner" id="daftar">
+                <a class="kartu-kuliner" href="Ayam_Taliwang.html" data-kategori="makanan">
+                    <img src="Ayam_Taliwang.jpg" alt="Foto Ayam Taliwang" loading="lazy">
+                    <div class="kartu-info">
+                        <h3>Ayam Taliwang</h3>
+                        <span class="tag">Makanan</span>
+                    </div>
+                </a>
+
+                <a class="kartu-kuliner" href="Tuak_manis.html" data-kategori="minuman">
+                    <img src="Tuak_Manis.jpeg" alt="Foto Tuak Manis" loading="lazy">
+                    <div class="kartu-info">
+                        <h3>Tuak Manis</h3>
+                        <span class="tag">Minuman</span>
+                    </div>
+                </a>
+
+                <a class="kartu-kuliner" href="Jaje_Tujak.html" data-kategori="camilan">
+                    <img src="Jaje_Tujaq.jpg" alt="Foto Jaje Tujak" loading="lazy">
+                    <div class="kartu-info">
+                        <h3>Jaje Tujak</h3>
+                        <span class="tag">Camilan &amp; Jajanan</span>
+                    </div>
+                </a>
+            </div>
+
+            <p class="pesan-kosong" id="kosong" hidden>Belum ada kuliner pada kategori ini.</p>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kuliner Lombok</p>
+            <script src="Daftar.js"></script>
+        </footer>
+    </body>
+</html>

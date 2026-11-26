@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisata Kuliner Lombok - Ulasan</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles-list.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1><img class="logo" src="logo.png" alt="Logo Kulineria">Kulineria</h1>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Daftar.html">Daftar</a></li>
+                    <li class="dropdown">
+                        <button type="button" class="dropdown-btn active" aria-haspopup="true">Form &#9662;</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+                            <li><a href="Pemesanan.html">Pemesanan</a></li>
+                            <li><a href="Ulasan.html">Ulasan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="bagian-form">
+                <h2>Berikan Ulasan</h2>
+                <p>Ceritakan pengalamanmu agar kami dan pengunjung lain bisa menemukan kuliner terbaik. Kolom bertanda * wajib diisi.</p>
+
+                <form id="form-ulasan" action="#" method="get">
+                    <div class="form-baris">
+                        <div class="form-group">
+                            <label for="nama">Nama *</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="menu">Menu yang Diulas</label>
+                            <select id="menu" name="menu">
+                                <option value="Umum">Umum / seluruh layanan</option>
+                                <option value="Ayam Taliwang">Ayam Taliwang</option>
+                                <option value="Tuak Manis">Tuak Manis</option>
+                                <option value="Jaje Tujak">Jaje Tujak</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Penilaian *</legend>
+                        <div class="bintang">
+                            <input type="radio" id="bintang5" name="rating" value="5" required>
+                            <label for="bintang5" title="5 - Sangat baik">&#9733;</label>
+                            <input type="radio" id="bintang4" name="rating" value="4">
+                            <label for="bintang4" title="4 - Baik">&#9733;</label>
+                            <input type="radio" id="bintang3" name="rating" value="3">
+                            <label for="bintang3" title="3 - Cukup">&#9733;</label>
+                            <input type="radio" id="bintang2" name="rating" value="2">
+                            <label for="bintang2" title="2 - Kurang">&#9733;</label>
+                            <input type="radio" id="bintang1" name="rating" value="1">
+                            <label for="bintang1" title="1 - Buruk">&#9733;</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="ulasan">Ulasan *</label>
+                        <textarea id="ulasan" name="ulasan" rows="5" minlength="10" maxlength="500" placeholder="Tulis ulasan anda (minimal 10 karakter)" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="saran">Saran untuk Kami (opsional)</label>
+                        <textarea id="saran" name="saran" rows="3" placeholder="Contoh: tambah pilihan menu minuman"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit">Kirim Ulasan</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="bagian-hasil" hidden>
+                <h2>Ringkasan Ulasan</h2>
+                <p class="notice">Terima kasih atas ulasanmu, <strong id="hasil-sapaan"></strong>! Berikut ulasan yang kamu tulis.</p>
+
+                <dl class="summary">
+                    <dt>Nama</dt>
+                    <dd id="hasil-nama"></dd>
+                    <dt>Menu yang Diulas</dt>
+                    <dd id="hasil-menu"></dd>
+                    <dt>Penilaian</dt>
+                    <dd id="hasil-rating"></dd>
+                    <dt>Ulasan</dt>
+                    <dd id="hasil-ulasan" style="white-space: pre-line; overflow-wrap: anywhere;"></dd>
+                    <dt>Saran</dt>
+                    <dd id="hasil-saran" style="white-space: pre-line; overflow-wrap: anywhere;"></dd>
+                </dl>
+
+                <div class="button-row">
+                    <button type="button" id="ulas-lagi">Tulis Ulasan Lagi</button>
+                    <a href="Index.html" class="btn-link"><button type="button" class="btn-secondary">Kembali ke Home</button></a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kuliner Lombok</p>
+        </footer>
+
+        <script src="Ulasan.js"></script>
+    </body>
+</html>

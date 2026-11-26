@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --lebar-konten: min(100% - 80px, 1400px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #2a1a12;
+    background-color: #dbd1c9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+header {
+    background-color: #c08552;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    width: var(--lebar-konten);
+    margin: 0 auto;
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav h1 {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav h1 .logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a.active,
+.dropdown-btn.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+nav > ul {
+    align-self: stretch;
+}
+
+nav > ul > li {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-btn:hover {
+    background: none;
+    text-decoration: underline;
+}
+
+nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 110;
+    min-width: 180px;
+    padding: 6px 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    background-color: #8C5A3C;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: flex;
+}
+
+nav .dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    white-space: nowrap;
+}
+
+nav .dropdown-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+}
+
+main {
+    width: var(--lebar-konten);
+    margin: 30px auto 40px;
+    display: grid;
+    gap: 20px;
+}
+
+main h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #8e2415;
+}
+
+main p {
+    margin-bottom: 16px;
+}
+
+main a {
+    text-decoration: none;
+}
+
+button {
+    background-color: #320e08;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #8e2415;
+}
+
+main section button:hover {
+    transform: translateY(-2px);
+}
+
+hr {
+    height: 2px;
+    border: none;
+    border-radius: 2px;
+    background: linear-gradient(to right, transparent, #c08552 20%, #c08552 80%, transparent);
+}
+
+.tag {
+    display: inline-block;
+    background-color: #8C5A3C;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+
+footer {
+    background-color: #2a1a12;
+    color: #e9e1d5;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.ke-atas {
+    display: none;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 90;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ke-atas.tampil {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --lebar-konten: min(100% - 40px, 1400px);
+    }
+}
+
+main > section:not(.judul-halaman) {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: rgb(255, 250, 246);
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main > section:not(.judul-halaman) h2 {
+    font-size: 1.7rem;
+}
+
+form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-group {
+    display: grid;
+    gap: 6px;
+}
+
+.form-baris {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+label,
+legend {
+    font-weight: 600;
+    color: #320e08;
+}
+
+fieldset {
+    border: none;
+    display: grid;
+    gap: 6px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.radio-option label {
+    font-weight: 400;
+}
+
+input[type="radio"] {
+    accent-color: #8e2415;
+    width: 18px;
+    height: 18px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #c08552;
+    border-radius: 5px;
+    background-color: white;
+    color: #2a1a12;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8e2415;
+    box-shadow: 0 0 0 3px rgba(142, 36, 21, 0.2);
+}
+
+.petunjuk {
+    color: #6b4a38;
+    font-size: 0.85rem;
+}
+
+.error-msg {
+    color: #b3261e;
+    font-size: 0.9rem;
+    min-height: 1.1em;
+}
+
+.input-error {
+    border-color: #b3261e !important;
+    background-color: #fff1ef !important;
+}
+
+.btn-link {
+    display: inline-block;
+}
+
+.btn-secondary {
+    background-color: #c08552;
+}
+
+.btn-secondary:hover {
+    background-color: #8C5A3C;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    margin-bottom: 16px;
+}
+
+.summary dt {
+    font-weight: 600;
+    color: #320e08;
+}
+
+.summary dd {
+    margin: 0;
+}
+
+.notice {
+    background-color: #fff3e0;
+    border-left: 4px solid #c08552;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+    main > section:not(.judul-halaman) {
+        padding: 20px;
+    }
+
+    .form-baris {
+        grid-template-columns: 1fr;
+    }
+}
+
+.judul-halaman {
+    background-color: #8C5A3C;
+    background-image:
+        linear-gradient(rgba(42, 26, 18, 0.65), rgba(42, 26, 18, 0.65)),
+        url('kuliner/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 48px 32px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.judul-halaman h2,
+.judul-halaman p {
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.judul-halaman h2 {
+    font-size: 1.9rem;
+}
+
+.judul-halaman p {
+    max-width: 640px;
+    margin-bottom: 0;
+}
+
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: #320e08;
+    border: 2px solid #8C5A3C;
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.filter-btn:hover {
+    background-color: #8e2415;
+    border-color: #8e2415;
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: #320e08;
+    border-color: #320e08;
+    color: white;
+}
+
+.grid-kuliner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.kartu-kuliner {
+    display: block;
+    overflow: hidden;
+    color: inherit;
+    background-color: rgb(255, 250, 246);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.kartu-kuliner[hidden] {
+    display: none;
+}
+
+.kartu-kuliner:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.kartu-kuliner img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #e9e1d5;
+}
+
+.kartu-info {
+    padding: 16px;
+}
+
+.kartu-info h3 {
+    color: #8e2415;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+.pesan-kosong {
+    text-align: center;
+    color: #6b4a38;
+}
+
+.bintang {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.bintang input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.bintang label {
+    font-size: 2.2rem;
+    line-height: 1;
+    font-weight: 400;
+    color: #d9cbbd;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.bintang input:checked ~ label,
+.bintang label:hover,
+.bintang label:hover ~ label {
+    color: #e0a526;
+}
+
+.bintang input:focus-visible + label {
+    outline: 2px solid #8e2415;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .judul-halaman {
+        padding: 32px 20px;
+    }
+
+    .grid-kuliner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .kartu-info {
+        padding: 12px;
+    }
+
+    .kartu-info h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    button, .kartu-kuliner { transition: none; }
+    .kartu-kuliner:hover, main section button:hover { transform: none; }
+}
