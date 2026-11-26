@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisata Kuliner Lombok - Pemesanan</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles-menu.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1><img class="logo" src="logo.png" alt="Logo Kulineria">Kulineria</h1>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Daftar.html">Daftar</a></li>
+                    <li class="dropdown">
+                        <button type="button" class="dropdown-btn active" aria-haspopup="true">Form &#9662;</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+                            <li><a href="Pemesanan.html">Pemesanan</a></li>
+                            <li><a href="Ulasan.html">Ulasan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="bagian-form">
+                <h2>Pesan Makanan</h2>
+                <p>Isi data berikut untuk memesan kuliner khas Lombok. Kolom bertanda * wajib diisi.</p>
+
+                <form id="form-pemesanan" action="#" method="get">
+                    <div class="form-baris">
+                        <div class="form-group">
+                            <label for="nama">Nama *</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hp">Nomor WhatsApp *</label>
+                            <input type="tel" id="hp" name="hp" placeholder="Contoh: 081234567890" pattern="(\+62|0)8[0-9]{8,11}" title="Contoh: 081234567890" required>
+                        </div>
+                    </div>
+
+                    <div class="form-baris">
+                        <div class="form-group">
+                            <label for="menu">Menu *</label>
+                            <select id="menu" name="menu" required>
+                                <option value="">-- Pilih menu --</option>
+                                <option value="Ayam Taliwang">Ayam Taliwang</option>
+                                <option value="Tuak Manis">Tuak Manis</option>
+                                <option value="Jaje Tujak">Jaje Tujak</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jumlah">Jumlah *</label>
+                            <input type="number" id="jumlah" name="jumlah" value="1" min="1" max="50" required>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Metode Penerimaan</legend>
+                        <div class="radio-option">
+                            <input type="radio" id="antar" name="metode" value="Diantar" checked>
+                            <label for="antar">Diantar ke alamat</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="ambil" name="metode" value="Ambil sendiri">
+                            <label for="ambil">Ambil sendiri</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat Pengantaran</label>
+                        <textarea id="alamat" name="alamat" rows="3" placeholder="Isi jika memilih diantar"></textarea>
+                        <small class="petunjuk">Boleh dikosongkan jika memilih ambil sendiri.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catatan">Catatan Tambahan (opsional)</label>
+                        <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh: tidak terlalu pedas"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit">Kirim Pesanan</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="bagian-hasil" hidden>
+                <h2>Ringkasan Pesanan</h2>
+                <p class="notice">Terima kasih, <strong id="hasil-sapaan"></strong>! Berikut data pesanan yang kamu isi.</p>
+
+                <dl class="summary">
+                    <dt>Nama</dt>
+                    <dd id="hasil-nama"></dd>
+                    <dt>Nomor WhatsApp</dt>
+                    <dd id="hasil-hp"></dd>
+                    <dt>Menu</dt>
+                    <dd id="hasil-menu"></dd>
+                    <dt>Jumlah</dt>
+                    <dd id="hasil-jumlah"></dd>
+                    <dt>Metode Penerimaan</dt>
+                    <dd id="hasil-metode"></dd>
+                    <dt>Alamat Pengantaran</dt>
+                    <dd id="hasil-alamat" style="white-space: pre-line; overflow-wrap: anywhere;"></dd>
+                    <dt>Catatan</dt>
+                    <dd id="hasil-catatan" style="white-space: pre-line; overflow-wrap: anywhere;"></dd>
+                </dl>
+
+                <div class="button-row">
+                    <button type="button" id="pesan-lagi">Pesan Lagi</button>
+                    <a href="Index.html" class="btn-link"><button type="button" class="btn-secondary">Kembali ke Home</button></a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kuliner Lombok</p>
+        </footer>
+
+        <script src="Pemesanan.js"></script>
+    </body>
+</html>
