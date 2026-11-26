@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisata Kuliner Lombok - Beranda</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1><img class="logo" src="logo.png" alt="Logo Kulineria">Kulineria</h1>
+                <ul>
+                    <li><a href="Index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="Daftar.html">Daftar</a></li>
+                    <li class="dropdown">
+                        <button type="button" class="dropdown-btn" aria-haspopup="true">Form &#9662;</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+                            <li><a href="Pemesanan.html">Pemesanan</a></li>
+                            <li><a href="Ulasan.html">Ulasan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="slider" aria-label="Galeri kuliner Lombok">
+                <div class="slides">
+                    <img src="gambar1.png" alt="Gambar 1">
+                    <img src="gambar2.png" alt="Gambar 2">
+                    <img src="gambar3.jpg" alt="Gambar 3">
+                </div>
+                <div class="slider-caption">
+                    <h2>Cita Rasa Khas Pulau Lombok</h2>
+                    <p>Pedas, gurih, dan penuh cerita di setiap sajian</p>
+                </div>
+            </div>
+            <hr>
+
+            <section class="profile">
+                <div class="profile-text">
+                    <h2>Jelajahi Kuliner Lombok</h2>
+                    <p>Mengenal berbagai makanan khas Lombok, mulai dari cita rasa, keunikan, hingga resepnya</p>
+                </div>
+                <a href="Daftar.html"><button>Jelajahi Kuliner</button></a>
+            </section>
+            <hr>
+
+            <div class="feature-row">
+                <section>
+                    <img class="section-icon" src="Recommendation.png" alt="Ikon rekomendasi">
+                    <h2>Cari Rekomendasi</h2>
+                    <p>Bingung mau makan apa? Jawab beberapa pertanyaan singkat dan temukan makanan yang sesuai dengan seleramu.</p>
+                    <a href="rekomendasi.html"><button>Mulai</button></a>
+                </section>
+
+                <section>
+                    <img class="section-icon" src="Order.png" alt="Ikon pemesanan">
+                    <h2>Pesan Makanan</h2>
+                    <p>Pesan makanan favoritmu langsung dari rumah. Pilih menu, isi data, dan pesananmu tercatat tanpa perlu antre.</p>
+                    <a href="Pemesanan.html"><button>Pesan</button></a>
+                </section>
+
+                <section>
+                    <img class="section-icon" src="Review.png" alt="Ikon ulasan">
+                    <h2>Ulasan</h2>
+                    <p>Berikan saran dan ulasanmu untuk membantu kami dan pengunjung lain menemukan kuliner terbaik.</p>
+                    <a href="Ulasan.html"><button>Review</button></a>
+                </section>
+            </div>
+
+            <aside class="info-bawah">
+                <p><strong>Kulineria</strong> dibuat untuk memudahkan kamu mengenal dan menikmati kuliner khas Lombok: mulai dari menjelajah, memilih, memesan, sampai berbagi ulasan.</p>
+            </aside>
+
+        </main>
+
+        <button id="ke-atas" class="ke-atas" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">&uarr;</button>
+
+        <footer>
+            <p>&copy; 2026 Kuliner Lombok</p>
+            <script src="Index.js"></script>
+        </footer>
+    </body>
+</html>

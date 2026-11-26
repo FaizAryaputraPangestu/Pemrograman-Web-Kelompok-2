@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wisata Kuliner Lombok - Hasil Rekomendasi</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h1><img class="logo" src="logo.png" alt="Logo Kulineria">Kulineria</h1>
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Daftar.html">Daftar</a></li>
+                    <li class="dropdown">
+                        <button type="button" class="dropdown-btn active" aria-haspopup="true">Form &#9662;</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="rekomendasi.html">Rekomendasi</a></li>
+                            <li><a href="Pemesanan.html">Pemesanan</a></li>
+                            <li><a href="Ulasan.html">Ulasan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2 id="judul-hasil">Hasil Rekomendasi</h2>
+                <div id="ringkasan"></div>
+            </section>
+
+            <section id="bagian-rekomendasi">
+                <h2>Kuliner yang Cocok untuk Anda</h2>
+                <div id="info"></div>
+                <div class="result-list" id="daftar-rekomendasi"></div>
+            </section>
+
+            <section>
+                <div class="button-row">
+                    <a href="rekomendasi.html" class="btn-link"><button type="button">Cari Lagi</button></a>
+                    <a href="Index.html" class="btn-link"><button type="button" class="btn-secondary">Kembali ke Home</button></a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; <span id="tahun">2026</span> Kuliner Lombok</p>
+        </footer>
+
+        <script src="hasil.js"></script>
+    </body>
+</html>
